@@ -1,7 +1,6 @@
 package com.example.huot_sreypov_spring_homework003.service.serviceImp;
 
 import com.example.huot_sreypov_spring_homework003.model.entity.Student;
-import com.example.huot_sreypov_spring_homework003.model.entity.StudentCourse;
 import com.example.huot_sreypov_spring_homework003.model.request.StudentRequest;
 import com.example.huot_sreypov_spring_homework003.repository.StudentCourseRepo;
 import com.example.huot_sreypov_spring_homework003.repository.StudentRepo;
@@ -15,7 +14,6 @@ public class StudentServiceImp implements StudentService {
 
     private final StudentRepo studentRepo;
     private final StudentCourseRepo studentCourseRepo;
-//    private final StudentCourse studentCourse;
 
     public StudentServiceImp(StudentRepo studentRepo, StudentCourseRepo studentCourseRepo) {
         this.studentRepo = studentRepo;
@@ -32,16 +30,6 @@ public class StudentServiceImp implements StudentService {
     public Student getStudentById(int id) {
         return studentRepo.findStudentById(id);
     }
-
-//    @Override
-//    public Student addStudent(StudentRequest studentRequest) {
-//        Student student = studentRepo.addStudent(studentRequest);
-//        for(Integer studentId : studentRequest.getCourseId())
-//        {
-//            studentCourseRepo.addStudentCourse(student.getStudentId(),studentId);
-//        }
-//        return studentRepo.getStudentById(String.valueOf(student.getStudentId()));
-//    }
 
     @Override
     public Student addStudent(StudentRequest studentRequest) {
